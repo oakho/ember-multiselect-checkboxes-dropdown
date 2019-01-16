@@ -1,0 +1,6 @@
+{
+  "name": "ember-multiselect-checkboxes-dropdown",
+  "dependencies": {
+    "ember-cli-shims": "~0.1.1"
+  }
+}

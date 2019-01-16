@@ -1,0 +1,42 @@
+{{#basic-dropdown class="ember-multiselect-dropdown" renderInPlace=true as |dropdown|}}
+  {{#dropdown.trigger class="align-center"}}
+    {{prepend}}
+
+    {{#if isAllSelected}}
+      {{t "multiselectCheckboxesDropdown.allSelected"}}
+    {{else if selected.length}}
+      {{join ", " (map-by labelPath selected)}}
+    {{else}}
+      {{placeholder}}
+    {{/if}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content class="ember-multiselect-dropdown-content"}}
+    <div class="ember-multiselect-dropdown-select-all">
+      <label>
+        <input type="checkbox" checked={{if isAllSelected "checked"}} onclick={{action "toggleAll"}} />
+        {{#if isAllSelected}}
+          {{t "multiselectCheckboxesDropdown.deselectAll"}}
+        {{else}}
+          {{t "multiselectCheckboxesDropdown.selectAll"}}
+        {{/if}}
+      </label>
+    </div>
+
+    {{#multiselect-checkboxes options=options selection=pendingOptions as |option isSelected|}}
+      <li>
+        <label>
+          {{input type="checkbox" checked=isSelected}}
+          {{#if hasBlock}}
+            {{yield option isSelected}}
+          {{else}}
+            {{get option labelPath}}
+          {{/if}}
+        </label>
+      </li>
+    {{/multiselect-checkboxes}}
+
+    <div class="ember-multiselect-dropdown-actions">
+      <button {{action (pipe (action onApply pendingOptions) dropdown.actions.close)}} disabled={{not pendingOptions.length}}>{{t "multiselectCheckboxesDropdown.apply"}}</button>
+    </div>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

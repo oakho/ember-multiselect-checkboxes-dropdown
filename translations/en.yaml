@@ -1,0 +1,5 @@
+multiselectCheckboxesDropdown:
+  allSelected: All
+  selectAll: Select All
+  deselectAll: Deselect All
+  apply: Apply

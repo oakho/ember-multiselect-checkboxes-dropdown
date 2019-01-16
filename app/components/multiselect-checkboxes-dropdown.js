@@ -1,0 +1,1 @@
+export { default } from 'ember-multiselect-checkboxes-dropdown/components/multiselect-checkboxes-dropdown';
