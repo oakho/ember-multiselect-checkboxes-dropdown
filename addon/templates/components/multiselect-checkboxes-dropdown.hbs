@@ -36,7 +36,7 @@
     {{/multiselect-checkboxes}}
 
     <div class="ember-multiselect-dropdown-actions">
-      <button {{action (pipe (action onApply pendingOptions) dropdown.actions.close)}} disabled={{not pendingOptions.length}}>{{t "multiselectCheckboxesDropdown.apply"}}</button>
+      <button {{action (pipe (action "apply") dropdown.actions.close)}} disabled={{not pendingOptions.length}}>{{t "multiselectCheckboxesDropdown.apply"}}</button>
     </div>
   {{/dropdown.content}}
 {{/basic-dropdown}}

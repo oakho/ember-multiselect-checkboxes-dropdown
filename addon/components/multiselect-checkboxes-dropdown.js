@@ -20,6 +20,13 @@ export default Component.extend({
   }),
 
   actions: {
+    apply() {
+      let onApply = this.attrs.onApply;
+
+      if(onApply) {
+        onApply(this.get('pendingOptions').toArray());
+      }
+    },
     toggleAll(event) {
       let checked = event.target.checked;
       this.set('pendingOptions', checked ? this.get('options').toArray() : []);
