@@ -13,8 +13,8 @@
   {{#dropdown.content class="ember-multiselect-dropdown-content"}}
     <div class="ember-multiselect-dropdown-select-all">
       <label>
-        <input type="checkbox" checked={{if isAllSelected "checked"}} onclick={{action "toggleAll"}} />
-        {{#if isAllSelected}}
+        <input type="checkbox" checked={{if isAllPendingSelected "checked"}} onclick={{action "toggleAll"}} />
+        {{#if isAllPendingSelected}}
           {{t "multiselectCheckboxesDropdown.deselectAll"}}
         {{else}}
           {{t "multiselectCheckboxesDropdown.selectAll"}}

@@ -15,6 +15,9 @@ export default Component.extend({
   isAllSelected: computed('selected.@each', function() {
     return this.get('options.length') === this.get('selected.length');
   }),
+  isAllPendingSelected: computed('pendingOptions.@each', function() {
+    return this.get('options.length') === this.get('pendingOptions.length');
+  }),
 
   actions: {
     toggleAll(event) {
