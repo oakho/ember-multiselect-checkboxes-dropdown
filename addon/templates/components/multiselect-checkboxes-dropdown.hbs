@@ -24,14 +24,14 @@
 
     {{#multiselect-checkboxes options=options selection=pendingOptions as |option isSelected|}}
       <li>
-        <label>
-          {{input type="checkbox" checked=isSelected}}
-          {{#if hasBlock}}
-            {{yield option isSelected}}
-          {{else}}
+        {{#if hasBlock}}
+          {{yield option isSelected}}
+        {{else}}
+          <label>
+            {{input type="checkbox" checked=isSelected}}
             {{get option labelPath}}
-          {{/if}}
-        </label>
+          </label>
+        {{/if}}
       </li>
     {{/multiselect-checkboxes}}
 
